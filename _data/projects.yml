@@ -8,3 +8,8 @@
   url: https://github.com/BrokeDudeAbula/the.dude.abula.github.io
   date: 2025-09-24
   featured: true
+- name: agent_group
+  summary: Backend-neutral plugin for project-local multi-agent orchestration
+  url: https://github.com/BrokeDudeAbula/agent-group-orchestrator
+  date: 2026-07-14
+  featured: true
