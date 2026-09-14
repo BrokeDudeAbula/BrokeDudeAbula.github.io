@@ -10,8 +10,7 @@
 ## 构建、测试与本地开发
 ```bash
 bundle install                         # 初始化依赖（Bundler 2.7.2 环境）
-bundle exec jekyll serve               # 本地预览，使用配置中的 baseurl
-bundle exec jekyll serve --baseurl ''  # 本地根路径预览
+bundle exec jekyll serve               # 本地预览（用户页根路径）
 bundle exec jekyll build --trace       # 构建与错误追踪
 ./clean_cache.sh                       # 清理 _site/.jekyll-cache/.sass-cache/vendor
 ```
@@ -60,7 +59,7 @@ bundle exec jekyll build --trace       # 构建与错误追踪
 ## PR 指南
 - PR 需包含：变更摘要、影响范围、截图（UI 改动必附）、关联 Issue/任务号，以及本地构建结果说明。
 - PR 描述中应明确是否影响首页、导航、RSS、SEO、GitHub Pages 路径、外部链接或移动端布局。
-- 推送到 `main` 即触发 GitHub Pages 发布；若改用自定义域名或用户页，请同步更新 `_config.yml` 的 `url`/`baseurl` 并在 README 说明访问路径。
+- 推送到 `main` 即触发 GitHub Pages 发布；当前为用户页（`url: https://brokedudeabula.github.io`，`baseurl: ""`）。若改用自定义域名，请同步更新 `_config.yml` 的 `url`/`baseurl` 并在 README 说明访问路径。
 
 ## 内容编辑与部署提示
 - 新文章放在 `content/_posts/`，标签与摘要会影响 RSS 与 SEO；首页精选项目由 `_data/projects.yml` 中 `featured: true` 控制。

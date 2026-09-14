@@ -1,4 +1,4 @@
-# the.dude.abula.github.io
+# BrokeDudeAbula.github.io
 
 TheDudeAbula 的个人站点，基于 [Jekyll](https://jekyllrb.com/) + Liquid + SCSS。
 
@@ -10,14 +10,11 @@ TheDudeAbula 的个人站点，基于 [Jekyll](https://jekyllrb.com/) + Liquid +
 ## 本地开发
 
 ```bash
-# 默认配置会使用 _config.yml 中的 baseurl（/the.dude.abula.github.io）
 bundle exec jekyll serve
-# 如希望本地以根路径预览，可覆写 baseurl
-bundle exec jekyll serve --baseurl ''
 ```
 
 - 默认端口 `4000`，LiveReload 已启用。
-- 使用默认配置时，访问路径为 `http://localhost:4000/the.dude.abula.github.io/`；使用 `--baseurl ''` 时可直接访问 `http://localhost:4000/`。
+- 站点以用户页根路径发布，本地访问地址为 `http://localhost:4000/`。
 
 ## 本地构建验证
 
@@ -57,5 +54,5 @@ bundle exec jekyll build --trace
 
 ## 部署说明
 
-- 推送到 `main` 分支即可用于 GitHub Pages；默认配置适用于项目页（`url: https://brokedudeabula.github.io` + `baseurl: /the.dude.abula.github.io`）。
-- 若改用自定义域名或用户页，请同步调整 `_config.yml` 中的 `url`/`baseurl`，并在 README 更新访问路径说明。
+- 推送到 `main` 分支即可用于 GitHub Pages。当前为用户页：`url: https://brokedudeabula.github.io`，`baseurl: ""`，线上地址为 `https://brokedudeabula.github.io/`。
+- 若改用自定义域名，请同步调整 `_config.yml` 中的 `url`/`baseurl`，并在 README 更新访问路径说明。
