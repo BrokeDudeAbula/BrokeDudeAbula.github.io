@@ -55,4 +55,5 @@ bundle exec jekyll build --trace
 ## 部署说明
 
 - 推送到 `main` 分支即可用于 GitHub Pages。当前为用户页：`url: https://brokedudeabula.github.io`，`baseurl: ""`，线上地址为 `https://brokedudeabula.github.io/`。
+- 仓库 Pages 的 Source 必须设为 GitHub Actions。若设成 Deploy from a branch，线上会直接发布源码，首页只显示 `layout: home`。
 - 若改用自定义域名，请同步调整 `_config.yml` 中的 `url`/`baseurl`，并在 README 更新访问路径说明。
