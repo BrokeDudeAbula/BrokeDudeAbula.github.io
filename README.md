@@ -1,11 +1,11 @@
 # BrokeDudeAbula.github.io
 
-TheDudeAbula 的个人站点，基于 [Jekyll](https://jekyllrb.com/) + Liquid + SCSS。
+TheDudeAbula 的个人站点，基于 [Jekyll](https://jekyllrb.com/) 与 [jekyll-theme-chirpy](https://github.com/cotes2020/jekyll-theme-chirpy)。
 
 ## 环境准备
 
-- 需要本机安装 Ruby 与 Bundler（当前 `Gemfile.lock` 使用 `BUNDLED WITH 2.7.2`）。
-- 安装依赖：`bundle install`（依赖 `github-pages` 套件）。
+- 需要本机安装 Ruby 与 Bundler。
+- 安装依赖：`bundle install`。
 
 ## 本地开发
 
@@ -27,26 +27,20 @@ bundle exec jekyll build --trace
 ## 目录结构
 
 - `_config.yml`：站点全局配置（`url`/`baseurl`、插件、集合等）。
-- `_layouts/`：页面骨架（`default`、`page`、`post`、`blog`）。
-- `_includes/`：可复用片段（`head`、`header`、`footer`、`hero` 等）。
-- `_sass/` + `assets/css/main.scss`：样式入口与模块化 SCSS。
-- `assets/`：编译产物与静态资源。
-- `content/_posts/`：文章内容集合（Front Matter 见下）。
-- `pages/`：独立页面（`/about`、`/projects`、`/blog`）。
-- `_data/`：结构化数据（导航、项目等）。
+- `_posts/`：博客正文，文件名遵循 `YYYY-MM-DD-title.md`。
+- `_tabs/`：侧边栏页面（关于、分类、标签、归档、项目、游戏）。
+- `_games/` + `_layouts/game.html` + `assets/js/games/`：HTML5 游戏集合。
+- `_data/`：项目、联系方式和中文文案覆盖。
+- `assets/css/jekyll-theme-chirpy.scss`：Chirpy 样式入口与站点覆盖。
+- `assets/`：头像、文章附图、游戏脚本与静态演示。
+- `_site/`：构建输出，勿提交。
 
 ## 内容与数据编辑
 
-- 博客文章：位于 `content/_posts/`，Front Matter 最小字段建议：
-  - `layout: post`, `title`, `date`；可选 `tags`, `description` 以配合 `jekyll-feed` 与 `jekyll-seo-tag`。
-- 独立页面：位于 `pages/`，使用 `layout: page`。
-- 导航：`_data/navigation.yml` 控制顶部菜单。
-- 首页精选项目：`_data/projects.yml` 中 `featured: true` 的项目会出现在首页「Featured Projects」区块。
-
-## 样式定制
-
-- 样式入口在 `assets/css/main.scss`，模块按功能拆分在 `_sass/` 目录。
-- 公共组件结构可在 `_includes/`（如 `hero.html`、`header.html`）与 `_layouts/` 中调整。
+- 新文章放在 `_posts/`。Front Matter 最小字段：`title`、`date`；推荐补充 `categories`、`tags`、`excerpt`。
+- 独立页面放在 `_tabs/`，由 `icon` 与 `order` 控制侧边栏显示。
+- 项目列表由 `_data/projects.yml` 维护，`featured` 仅作数据标记，展示页在 `/projects/`。
+- 自定义样式只追加在 `assets/css/jekyll-theme-chirpy.scss`，不要覆盖 Chirpy 的 `_includes/head.html`。
 
 ## 构建缓存清理
 

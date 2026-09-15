@@ -2,14 +2,15 @@
 
 ## 项目结构与模块
 - `_config.yml`：站点配置（`url`/`baseurl`、插件、集合），发布前请确认域名与路径。
-- `_layouts/` 与 `_includes/`：页面骨架与可复用片段；调整全局结构或 SEO 标签时修改这里。
-- `_sass/` + `assets/css/main.scss`：样式入口与分层 SCSS；`assets/` 存放编译产物与静态资源。
-- `content/_posts/`：博客正文，文件名遵循 `YYYY-MM-DD-title.md`；`pages/` 存放独立页面；`_data/` 维护导航、项目等结构化数据。
+- `_posts/`：博客正文，文件名遵循 `YYYY-MM-DD-title.md`。
+- `_tabs/`：侧边栏页面；`_games/`、`_layouts/game.html`、`assets/js/games/` 负责游戏集合。
+- `_data/`：项目、联系方式和 locale 覆盖；中文导航文案改 `_data/locales/zh-CN.yml`。
+- `assets/css/jekyll-theme-chirpy.scss`：Chirpy 样式入口，仅在此追加站点覆盖。
 - `_site/` 为构建输出，勿提交；`clean_cache.sh` 用于清理构建缓存。
 
 ## 构建、测试与本地开发
 ```bash
-bundle install                         # 初始化依赖（Bundler 2.7.2 环境）
+bundle install                         # 初始化依赖
 bundle exec jekyll serve               # 本地预览（用户页根路径）
 bundle exec jekyll build --trace       # 构建与错误追踪
 ./clean_cache.sh                       # 清理 _site/.jekyll-cache/.sass-cache/vendor
@@ -17,10 +18,11 @@ bundle exec jekyll build --trace       # 构建与错误追踪
 - 默认端口 4000，LiveReload 已启用。
 
 ## 编码风格与命名
-- Markdown/HTML/Liquid 使用 2 空格缩进，避免行尾空格；尽量复用 `_includes` 片段而非内联样式。
-- Front Matter 最小字段：`layout`、`title`、`date`，推荐补充 `tags`、`description` 以配合 `jekyll-feed`、`jekyll-seo-tag`。
+- Markdown/HTML/Liquid 使用 2 空格缩进，避免行尾空格。
+- 自定义结构优先复用 Chirpy 布局与 `_tabs`，不要复制主题内的 `_includes` / `_sass`。
+- Front Matter 最小字段：`title`、`date`，推荐补充 `categories`、`tags`、`excerpt` 以配合 `jekyll-feed`、`jekyll-seo-tag`。
 - YAML 数据键名使用 `snake_case`，页面/资源命名使用小写短横线风格。
-- SCSS 分层：变量/混入放在 `_sass`，入口仅做导入与少量全局覆盖。
+- SCSS 覆盖放在 `assets/css/jekyll-theme-chirpy.scss`，不要另起旧主题的 `assets/css/main.scss`。
 
 ## 测试与校验
 - 无单独单测框架，变更后必跑 `bundle exec jekyll build --trace`；如涉及依赖升级，可加跑 `bundle exec jekyll doctor`。
@@ -62,5 +64,5 @@ bundle exec jekyll build --trace       # 构建与错误追踪
 - 推送到 `main` 即触发 GitHub Pages 发布；当前为用户页（`url: https://brokedudeabula.github.io`，`baseurl: ""`）。若改用自定义域名，请同步更新 `_config.yml` 的 `url`/`baseurl` 并在 README 说明访问路径。
 
 ## 内容编辑与部署提示
-- 新文章放在 `content/_posts/`，标签与摘要会影响 RSS 与 SEO；首页精选项目由 `_data/projects.yml` 中 `featured: true` 控制。
+- 新文章放在 `_posts/`，标签与摘要会影响 RSS 与 SEO；项目列表由 `_data/projects.yml` 维护。
 - 避免将密钥、Token 写入配置或数据文件；需要外部链接时使用 https 并检查可用性。

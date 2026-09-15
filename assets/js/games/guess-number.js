@@ -60,12 +60,12 @@
     const historyItem = document.createElement('div');
     historyItem.className = 'history-item';
 
-    if (guess < targetNumber) {
+    if (guess > targetNumber) {
       resultDisplay.textContent = '📈 猜大了！';
       resultDisplay.className = 'hint-high';
       historyItem.textContent = `↓ ${guess}`;
       historyItem.classList.add('hint-high');
-    } else if (guess > targetNumber) {
+    } else if (guess < targetNumber) {
       resultDisplay.textContent = '📉 猜小了！';
       resultDisplay.className = 'hint-low';
       historyItem.textContent = `↑ ${guess}`;

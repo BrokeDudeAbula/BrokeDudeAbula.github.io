@@ -214,28 +214,16 @@ exclude:
   - "*.gemspec"
   - README.md
   - LICENSE
-  - MIGRATION_CHIRPY.md
-  - MIGRATION_CHIRPY_REVIEW.md
-  - IFLOW.md
   - AGENTS.md
   - CLAUDE.md
-  - game-recommendations.md
-  - opt_suggest.md
   - clean_cache.sh
   - Gemfile.lock
-  - _migration_backup
   - _site
   - .jekyll-cache
   - .sass-cache
   - .bundle
   - node_modules
   - vendor
-  - docs
-  - tools
-  - purgecss.js
-  - "*.config.js"
-  - "package*.json"
-  - prompt.md
 
 jekyll-archives:
   enabled: [categories, tags]
