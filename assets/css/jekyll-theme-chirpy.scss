@@ -537,7 +537,31 @@
   letter-spacing: 0;
 }
 
+.pelican-demo {
+  margin: 1.25rem 0 1.75rem;
+
+  iframe {
+    display: block;
+    width: 100%;
+    height: 40rem;
+    border: 1px solid var(--main-border-color);
+    border-radius: 0.5rem;
+    background: var(--card-bg);
+  }
+
+  figcaption {
+    margin-top: 0.55rem;
+    color: var(--text-muted-color);
+    font-size: 0.875rem;
+    text-align: center;
+  }
+}
+
 @media (max-width: 576px) {
+  .pelican-demo iframe {
+    height: 26rem;
+  }
+
   .post-content,
   .game-body {
     line-height: 1.75;
