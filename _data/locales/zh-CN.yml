@@ -1,4 +1,5 @@
-# 本文件仅覆盖当前站点新增 tab 的中文显示；其余中文文案继续使用 Chirpy 主题内置 locale。
+# 本文件仅覆盖当前站点需要改写的中文显示；其余文案继续使用 Chirpy 主题内置 locale。
 tabs:
+  home: 文章
   projects: 项目
   games: 游戏

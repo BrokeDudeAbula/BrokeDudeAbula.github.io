@@ -514,11 +514,25 @@
   }
 }
 
-#avatar {
+#sidebar #avatar {
   background: var(--card-bg);
+  /* Chirpy 默认 rounded-circle 会切掉方形插画四角。 */
+  border-radius: 0 !important;
+  transition: transform 0.5s;
+
+  &:hover {
+    transform: scale(1.2);
+  }
 
   img {
     object-fit: cover;
+    border-radius: 0;
+    /* 取消主题里「只放大图片、框不动」的 hover。 */
+    transition: none;
+
+    &:hover {
+      transform: none;
+    }
   }
 }
 
